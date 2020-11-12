@@ -1,0 +1,56 @@
+<!doctype html>
+<html class="no-js" lang="">
+
+<head>
+  <meta charset="utf-8">
+  <title></title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+  <link rel="stylesheet" href="css/styles.css">
+
+  <meta name="theme-color" content="#fafafa">
+  <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Just+Another+Hand&display=swap'>
+  <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@2.0.0/dist/tf.min.js"></script>
+  <script src="js/vendor/opencv.js"></script>
+  <script src="js/drawing.js"></script>
+  <script src="js/processing.js"></script>
+  <script src="js/math.js"></script>
+</head>
+
+<body>
+
+  <!-- Add your site or application content here -->
+<div class='container'>
+
+    <!-- TODO: Add title here -->
+    <div id="title">
+      <h2>Using Machine Learning the computer is able to identify the digit you have written.</h2>
+      <h1> Try it out!</h1>
+    </div>
+    <canvas id="my-canvas" width="150" height="150"></canvas>
+    <!-- TODO: Add a drawing canvas here -->
+  </div>
+
+
+
+  <!-- TODO: Set up TF model and drawing logic-->
+    <div class='container'>
+      <button id="ansButton" class='btn' value='Check'>What's the digit?</button>
+      <canvas id="prediction" width="70" height="70"></canvas>
+    </div>
+
+  <script>
+    prepareCanvas();
+    loadModel();
+    document.getElementById("ansButton").addEventListener('click', function () {
+        cleanAnswer();
+        checkAnswer();
+        clearCanvas();
+    })
+  </script>
+</body>
+
+
+</html>
